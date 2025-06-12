@@ -4,15 +4,15 @@ services:
     env: docker
     plan: free
     branch: main
-    buildCommand: ""
-    startCommand: ""
+    repo: https://github.com/kesharg/mini-website-builder-backend-api
+    dockerfilePath: Dockerfile
     envVars:
       - key: APP_ENV
         value: production
+      - key: APP_KEY
+        value: base64:YOUR_GENERATED_KEY
       - key: APP_DEBUG
         value: false
-      - key: APP_KEY
-        generateValue: true
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
