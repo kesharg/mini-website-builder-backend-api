@@ -3,14 +3,15 @@ services:
     name: mini-website-builder-backend
     env: docker
     plan: free
-    branch: main
     repo: https://github.com/kesharg/mini-website-builder-backend-api
+    branch: main
     dockerfilePath: Dockerfile
+    autoDeploy: true
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_KEY
-        value: base64:YOUR_GENERATED_KEY
+        generateValue: true
       - key: APP_DEBUG
         value: false
       - key: DB_CONNECTION
@@ -22,6 +23,6 @@ services:
       - key: DB_DATABASE
         value: YOUR_DB_NAME
       - key: DB_USERNAME
-        value: YOUR_DB_USER
+        value: YOUR_DB_USERNAME
       - key: DB_PASSWORD
         value: YOUR_DB_PASSWORD
